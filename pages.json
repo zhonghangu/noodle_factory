@@ -1,0 +1,62 @@
+{
+    "pages": [
+        {
+            "path": "pages/home/home",
+            "style": {
+                "navigationBarTitleText": "匠心面坊",
+                "navigationBarBackgroundColor": "#FACC15",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/order/order",
+            "style": {
+                "navigationBarTitleText": "在线订购",
+                "navigationBarBackgroundColor": "#FACC15",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/profile/profile",
+            "style": {
+                "navigationBarTitleText": "我的信息",
+                "navigationBarBackgroundColor": "#FACC15",
+                "navigationBarTextStyle": "white"
+            }
+        }
+    ],
+    "tabBar": {
+        "color": "#9CA3AF",
+        "selectedColor": "#FACC15",
+        "backgroundColor": "#FFFFFF",
+        "borderStyle": "black",
+        "height": "80px",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "static/icon/home.png",
+                "selectedIconPath": "static/icon/home-active.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订购",
+                "iconPath": "static/icon/cart.png",
+                "selectedIconPath": "static/icon/cart-active.png"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "我的",
+                "iconPath": "static/icon/user.png",
+                "selectedIconPath": "static/icon/user-active.png"
+            }
+        ]
+    },
+    "globalStyle": {
+        "backgroundColor": "#F3F4F6",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "面条工厂小程序",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "backgroundTextStyle": "light"
+    }
+}

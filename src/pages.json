@@ -1,7 +1,21 @@
 {
     "pages": [
         {
-            "path": "pages/home/home",
+            "path": "pages/auth/identity-select",
+            "style": {
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/auth/merchant-login",
+            "style": {
+                "navigationBarTitleText": "商家登录",
+                "navigationBarBackgroundColor": "#FACC15",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/user/home/home",
             "style": {
                 "navigationBarTitleText": "匠心面坊",
                 "navigationBarBackgroundColor": "#FACC15",
@@ -9,7 +23,7 @@
             }
         },
         {
-            "path": "pages/order/order",
+            "path": "pages/user/order/order",
             "style": {
                 "navigationBarTitleText": "在线订购",
                 "navigationBarBackgroundColor": "#FACC15",
@@ -17,11 +31,17 @@
             }
         },
         {
-            "path": "pages/profile/profile",
+            "path": "pages/user/profile/profile",
             "style": {
                 "navigationBarTitleText": "我的信息",
                 "navigationBarBackgroundColor": "#FACC15",
                 "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/merchant/dashboard/dashboard",
+            "style": {
+                "navigationStyle": "custom"
             }
         }
     ],
@@ -30,22 +50,22 @@
         "selectedColor": "#FACC15",
         "backgroundColor": "#FFFFFF",
         "borderStyle": "black",
-        "height": "80px",
+        "height": "80rpx",
         "list": [
             {
-                "pagePath": "pages/home/home",
+                "pagePath": "pages/user/home/home",
                 "text": "首页",
                 "iconPath": "static/icon/home.png",
                 "selectedIconPath": "static/icon/home-active.png"
             },
             {
-                "pagePath": "pages/order/order",
+                "pagePath": "pages/user/order/order",
                 "text": "订购",
                 "iconPath": "static/icon/cart.png",
                 "selectedIconPath": "static/icon/cart-active.png"
             },
             {
-                "pagePath": "pages/profile/profile",
+                "pagePath": "pages/user/profile/profile",
                 "text": "我的",
                 "iconPath": "static/icon/user.png",
                 "selectedIconPath": "static/icon/user-active.png"
@@ -55,7 +75,7 @@
     "globalStyle": {
         "backgroundColor": "#F3F4F6",
         "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "面条工厂小程序",
+        "navigationBarTitleText": "匠心面坊",
         "navigationBarBackgroundColor": "#FFFFFF",
         "backgroundTextStyle": "light"
     }

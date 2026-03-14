@@ -87,8 +87,8 @@
 </template>
 
 <script>
-import { STATUS_TEXT } from '../../common/data.js';
-import { getUser, getOrders, showToast } from '../../common/util.js';
+import { STATUS_TEXT } from '../../../common/data.js';
+import { getUser, getOrders, showToast } from '../../../common/util.js';
 
 export default {
     data() {

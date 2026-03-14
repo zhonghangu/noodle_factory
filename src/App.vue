@@ -1,6 +1,8 @@
 <template>
     <view id="app">
-        <router-view />
+        <view class="app-container">
+            <!-- 应用内容将通过 pages.json 配置的页面自动渲染 -->
+        </view>
     </view>
 </template>
 
@@ -8,6 +10,22 @@
 export default {
     onLaunch: function() {
         console.log('App Launch')
+        // 检查登录状态，自动跳转
+        const user = uni.getStorageSync('noodle_user')
+        const merchant = uni.getStorageSync('merchant')
+        
+        // 延迟执行，确保页面栈初始化
+        setTimeout(() => {
+            const pages = getCurrentPages()
+            const currentPage = pages[pages.length - 1]?.route
+            
+            // 如果不是身份选择页，且没有登录信息，跳转到身份选择
+            if (!currentPage?.includes('pages/auth/') && !user && !merchant) {
+                uni.reLaunch({
+                    url: '/pages/auth/identity-select'
+                })
+            }
+        }, 100)
     },
     onShow: function() {
         console.log('App Show')
@@ -16,14 +34,14 @@ export default {
         console.log('App Hide')
     },
     globalData: {
-        userInfo: null
+        userInfo: null,
+        merchantInfo: null
     }
 }
 </script>
 
 <style>
 /* 全局样式 */
-@import "./uni.scss";
 
 page {
     background-color: #F3F4F6;

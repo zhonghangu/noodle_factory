@@ -63,9 +63,9 @@
 </template>
 
 <script>
-import { CATEGORIES, SUB_ITEMS, SPECS } from '../../common/data.js';
-import { getUser, getCart, saveCart, getOrders, saveOrders, showToast, generateOrderId } from '../../common/util.js';
-import cartBar from '../../components/cart-bar/cart-bar.vue';
+import { CATEGORIES, SUB_ITEMS, SPECS } from '../../../common/data.js';
+import { getUser, getCart, saveCart, getOrders, saveOrders, showToast, generateOrderId } from '../../../common/util.js';
+import cartBar from '../../../components/cart-bar/cart-bar.vue';
 
 export default {
     components: {

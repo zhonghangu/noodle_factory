@@ -97,8 +97,8 @@
 </template>
 
 <script>
-import { getUser, saveUser, showToast } from '../../common/util.js';
-import uModal from '../../components/u-modal/u-modal.vue';
+import { getUser, saveUser, showToast } from '../../../common/util.js';
+import uModal from '../../../components/u-modal/u-modal.vue';
 
 export default {
     components: {

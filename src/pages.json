@@ -7,6 +7,14 @@
             }
         },
         {
+            "path": "pages/auth/wx-login",
+            "style": {
+                "navigationBarTitleText": "微信登录",
+                "navigationBarBackgroundColor": "#FACC15",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
             "path": "pages/auth/merchant-login",
             "style": {
                 "navigationBarTitleText": "商家登录",

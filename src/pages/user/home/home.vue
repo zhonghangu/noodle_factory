@@ -4,25 +4,25 @@
         <view class="banner">
             <image class="banner-img" src="https://modao.cc/agent-py/media/generated_images/2026-02-12/b491dde983544268a05184c2a0638920.jpg" mode="scaleToFill"></image>
             <view class="banner-text">
-                <text class="banner-title">匠心面坊</text>
-                <text class="banner-subtitle">2026年品质坚持 · 源自天然</text>
+                <text class="banner-title">鲜面直达</text>
+                <text class="banner-subtitle">20年品质坚持 · 源自天然</text>
             </view>
         </view>
 
         <!-- 登录/未登录区域 -->
         <view class="auth-section" v-if="!user">
             <view class="auth-card">
-                <text class="auth-desc">欢迎来到面条工厂，开启您的订制之旅</text>
+                <text class="auth-desc">欢迎来到鲜面直达，开启您的订购之旅</text>
                 <view class="auth-btns">
-                    <button class="btn login-btn" @click="showLogin">登录</button>
-                    <button class="btn register-btn" @click="showRegister">注册</button>
+                    <view class="btn login-btn" hover-class="auth-btn-hover" @click="showLogin">登录</view>
+                    <view class="btn register-btn" hover-class="auth-btn-hover" @click="showRegister">注册</view>
                 </view>
             </view>
         </view>
         <view class="auth-section" v-else>
             <view class="auth-card">
                 <text class="auth-desc">欢迎回来，{{user.name}}</text>
-                <button class="btn enter-btn" @click="goToProfile">进入我的信息</button>
+                <view class="btn enter-btn" hover-class="auth-btn-hover" @click="goToProfile">进入我的信息</view>
             </view>
         </view>
 
@@ -61,7 +61,7 @@
         </view>
 
         <!-- 登录弹窗 -->
-        <u-modal v-model="loginShow" title="登录" @confirm="submitLogin">
+        <u-modal :show="loginShow" title="登录" @confirm="submitLogin" @close="loginShow = false">
             <view class="form-item">
                 <label class="form-label">手机号</label>
                 <input class="form-input" type="tel" v-model="loginForm.phone" placeholder="请输入手机号" maxlength="11" />
@@ -76,7 +76,7 @@
         </u-modal>
 
         <!-- 注册弹窗 -->
-        <u-modal v-model="registerShow" title="注册" @confirm="submitRegister">
+        <u-modal :show="registerShow" title="注册" @confirm="submitRegister" @close="registerShow = false">
             <view class="form-item">
                 <label class="form-label">昵称</label>
                 <input class="form-input" type="text" v-model="registerForm.name" placeholder="请输入昵称" />
@@ -244,6 +244,9 @@ export default {
 .auth-btns {
     display: flex;
     gap: 24rpx;
+}
+.auth-btn-hover {
+    opacity: 0.85;
 }
 .btn {
     flex: 1;

@@ -2,17 +2,17 @@
     <view class="identity-page">
         <view class="logo-section">
             <image src="/static/logo.png" class="logo" mode="aspectFit"></image>
-            <text class="app-name">匠心面坊</text>
+            <text class="app-name">鲜面直达</text>
             <text class="app-desc">新鲜面条 · 工厂直达</text>
         </view>
 
         <view class="identity-cards">
-            <view class="identity-card user-card" @click="selectIdentity('user')">
+            <view class="identity-card user-card" @click="goToWxLogin">
                 <view class="card-icon blue">
                     <text class="iconfont icon-yonghu"></text>
                 </view>
                 <text class="card-title">我是顾客</text>
-                <text class="card-desc">在线订购，配送到家</text>
+                <text class="card-desc">微信授权登录，配送到家</text>
                 <view class="card-arrow">></view>
             </view>
 
@@ -27,7 +27,7 @@
         </view>
 
         <view class="footer">
-            <text class="footer-text">© 2026 匠心面坊 版权所有</text>
+            <text class="footer-text">© 2026 鲜面直达 版权所有</text>
         </view>
     </view>
 </template>
@@ -54,6 +54,11 @@ export default {
         }
     },
     methods: {
+        goToWxLogin() {
+            uni.navigateTo({
+                url: '/pages/auth/wx-login'
+            });
+        },
         selectIdentity(type) {
             if (type === 'user') {
                 uni.switchTab({

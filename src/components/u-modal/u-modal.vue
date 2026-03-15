@@ -1,15 +1,15 @@
 <template>
-    <view class="modal-overlay" v-if="show" @click="closeModal">
+    <view class="modal-overlay" v-if="visible" @click="closeModal">
         <view class="modal-content" @click.stop>
             <view class="modal-header">
                 <text class="modal-title">{{title}}</text>
-                <button class="modal-close" @click="closeModal">×</button>
+                <button class="modal-close" type="default" hover-class="none" @click="closeModal">×</button>
             </view>
             <view class="modal-body">
                 <slot></slot>
             </view>
             <view class="modal-footer">
-                <button class="modal-confirm" @click="handleConfirm">确认</button>
+                <button class="modal-confirm" type="default" hover-class="none" @click="handleConfirm">确认</button>
             </view>
         </view>
     </view>
@@ -18,7 +18,7 @@
 <script>
 export default {
     props: {
-        value: {
+        show: {
             type: Boolean,
             default: false
         },
@@ -27,14 +27,20 @@ export default {
             default: ''
         }
     },
-    computed: {
-        show() {
-            return this.value;
+    data() {
+        return {
+            visible: this.show
+        };
+    },
+    watch: {
+        show(newVal) {
+            this.visible = newVal;
         }
     },
     methods: {
         closeModal() {
-            this.$emit('input', false);
+            this.visible = false;
+            this.$emit('close');
         },
         handleConfirm() {
             this.$emit('confirm');
